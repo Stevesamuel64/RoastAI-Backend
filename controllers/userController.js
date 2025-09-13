@@ -1,7 +1,8 @@
 import bcrypt from "bcryptjs";
 import { User } from "../models/user.js"
-const isProduction = process.env.NODE_ENV === "production";
 import jwt from "jsonwebtoken";
+const isProduction = process.env.NODE_ENV === "production";
+
 
 export const loginUser = async (req, res) => {
     try {
