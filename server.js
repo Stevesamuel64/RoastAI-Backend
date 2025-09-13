@@ -17,6 +17,7 @@ connectDB()
 
 const allowedOrigins = [
   "http://localhost:3000",
+  "https://roast-ai-frontend.vercel.app",
   "https://roast-ai-frontend-di1v2non1-yash-s-projects-c74e4821.vercel.app"
 ];
 
