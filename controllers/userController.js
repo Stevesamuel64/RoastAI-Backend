@@ -93,15 +93,15 @@ export const signupUser = async (req, res) => {
 
 export const logoutUser = (req, res) => {
     try {
-        res
-            .cookie("token", "", {
-                httpOnly: true,
-                sameSite: "strict",
-                secure: false,
-                expires: new Date(0),
-            })
-            .status(200)
-            .json({ message: "Logout successful" });
+      res.cookie("token", "", {
+          httpOnly: true,
+          sameSite: "strict",
+          expires: new Date(0),
+          path: "/",
+        })
+        .status(200)
+        .json({ message: "Logout successful" });
+
     } catch (error) {
         res.status(500).json({ message: error.message || "Internal Server Error" });
     }
