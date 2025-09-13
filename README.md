@@ -1,4 +1,3 @@
-
 # RoastAI-Backend
 
 Backend of the RoastAI project, built to provide witty, comedic AI responses using the DeepSeek r1 API.
@@ -97,9 +96,3 @@ NODE_ENV=<development_or_production>         # Set to 'development' or 'producti
 ## License
 
 📝 For educational and personal practice only. Fork, run, and learn!
-
----
-
-## Author
-
-Made by Yash
