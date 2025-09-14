@@ -50,7 +50,7 @@ app.use("/api/check-auth", (req, res) => {
 
   } catch (error) {
     res.json({ authenticated: false });
-    console.log(error)
+    console.log(error);
   }
 })
 
