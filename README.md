@@ -5,24 +5,25 @@ Backend of the RoastAI project, built to provide witty, comedic AI responses usi
 ---
 
 ## Project Overview / Purpose
+
 This backend powers RoastAI, a platform that delivers hilarious AI-generated content. It handles AI requests, processes user input, and sends funny responses, including daily witty news summaries.
 
 ---
 
 ## Features
 
-- **SavageBot:** A sarcastic, roast-style chatbot that answers questions with a comic twist.  
-- **Funny Responses:** Users can input a subject and request a humorous reply in the style of a person or country.    
-- **Group Debates:** Funny debates between two characters roasting themselves.  
-- **Random Quote Remix:** Takes famous quotes and remixes them into absurd, funny versions.  
+- **SavageBot:** A sarcastic, roast-style chatbot that answers questions with a comic twist.
+- **Funny Responses:** Users can input a subject and request a humorous reply in the style of a person or country.
+- **Group Debates:** Funny debates between two characters roasting themselves.
+- **Random Quote Remix:** Takes famous quotes and remixes them into absurd, funny versions.
 - **Daily Email:** Receive a daily email summarizing yesterday’s top news in a witty, comedic style.
 
 ---
 
 ## Tech Stack
 
-- **Frontend (integrates with backend):** React.js, TypeScript, TailwindCSS  
-- **Backend:** Node.js, Express.js, MongoDB, Mongoose  
+- **Frontend (integrates with backend):** React.js, TypeScript, TailwindCSS
+- **Backend:** Node.js, Express.js, MongoDB, Mongoose
 - **Other Tools:** Bcrypt.js, JWT, Cookie-parser, Nodemailer, Node-cron, DeepSeek r1 API
 
 ---
@@ -31,10 +32,10 @@ This backend powers RoastAI, a platform that delivers hilarious AI-generated con
 
 ### Prerequisites
 
-- Node.js >= 16  
-- MongoDB (local or Atlas)  
-- DeepSeek r1 API key  
-- Email account for daily summaries  
+- Node.js >= 16
+- MongoDB (local or Atlas)
+- DeepSeek r1 API key
+- Email account for daily summaries
 
 ### Installation
 
@@ -42,7 +43,7 @@ This backend powers RoastAI, a platform that delivers hilarious AI-generated con
 git clone <your-repo-url>
 cd RoastAI-Backend
 npm install
-````
+```
 
 ### Running Locally
 
@@ -50,7 +51,7 @@ npm install
 npm run dev
 ```
 
-* Starts the server with Nodemon for hot reloading.
+- Starts the server with Nodemon for hot reloading.
 
 ### Production
 
@@ -58,7 +59,7 @@ npm run dev
 npm start
 ```
 
-* Runs the backend in production mode.
+- Runs the backend in production mode.
 
 ---
 
