@@ -1,15 +1,19 @@
-import dotenv from "dotenv";
+import dotenv from 'dotenv';
 dotenv.config();
 
 export function formatPremiumNewsEmail(newsItems) {
-  console.log("Request is coming to the formatPremiumNewsEmail function", "Type:", typeof newsItems, Array.isArray(newsItems))
+  console.log(
+    'Request is coming to the formatPremiumNewsEmail function',
+    'Type:',
+    typeof newsItems,
+    Array.isArray(newsItems)
+  );
   try {
     newsItems = Array.isArray(newsItems) ? newsItems : JSON.parse(newsItems);
   } catch (err) {
-    console.error("Invalid JSON:", err.message);
+    console.error('Invalid JSON:', err.message);
     return;
   }
-
 
   return `
      <div style="font-family: 'Inter','Helvetica Neue',Arial,sans-serif; max-width:720px; margin:40px auto; background:#ffffff; border-radius:20px; overflow:hidden; box-shadow:0 8px 28px rgba(0,0,0,0.08); border:1px solid #e2e8f0;">
@@ -24,7 +28,9 @@ export function formatPremiumNewsEmail(newsItems) {
 
   <!-- News Content -->
   <div style="padding:26px 40px; background:#ffffff; color:#1e293b;">
-    ${newsItems.map((item) => `
+    ${newsItems
+      .map(
+        (item) => `
       <div style="margin-bottom:40px;padding:20px 30px; border:1px solid #e5e7eb; border-radius:16px; background:#fafafa; word-wrap:break-word; overflow-wrap:break-word;">
         
         <!-- Heading -->
@@ -37,13 +43,15 @@ export function formatPremiumNewsEmail(newsItems) {
 
         <!-- Body -->
         <p style="margin:0; font-size:14px; font-weight:300; line-height:1.6; color:#374151; word-wrap:break-word; overflow-wrap:break-word;">
-            ${(item.content || item.description || "No summary available").split('… [+')[0]}
+            ${(item.content || item.description || 'No summary available').split('… [+')[0]}
         </p>
   
         <!-- Read More (optional) -->
-        ${item.link ? `<a href="${item.link}" style="display:inline-block; margin-top:12px; font-size:14px; font-weight:500; color:#2563eb; text-decoration:none;">Read more →</a>` : ""}
+        ${item.link ? `<a href="${item.link}" style="display:inline-block; margin-top:12px; font-size:14px; font-weight:500; color:#2563eb; text-decoration:none;">Read more →</a>` : ''}
       </div>
-    `).join('')}
+    `
+      )
+      .join('')}
   </div>
 
   <!-- Footer -->

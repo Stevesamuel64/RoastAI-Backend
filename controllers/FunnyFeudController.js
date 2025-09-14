@@ -9,7 +9,7 @@ export const getFunnyFeud = async (req, res, next) => {
     ) {
       return res.status(400).json({
         error:
-          "All fields (prompt, selectedCharacter1, selectedCharacter2) are required and cannot be empty.",
+          'All fields (prompt, selectedCharacter1, selectedCharacter2) are required and cannot be empty.',
       });
     }
 
@@ -37,21 +37,21 @@ export const getFunnyFeud = async (req, res, next) => {
             { "name": "${selectedCharacter2}", "body": "[funny comeback]" },
             ...
           ]
-          `;    
-    
+          `;
+
     const response = await fetch(
-      "https://openrouter.ai/api/v1/chat/completions",
+      'https://openrouter.ai/api/v1/chat/completions',
       {
-        method: "POST",
+        method: 'POST',
         headers: {
           Authorization: `Bearer ${process.env.API_KEY_Funny_Feud}`,
-          "Content-Type": "application/json",
+          'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-          model: "deepseek/deepseek-r1:free",
+          model: 'deepseek/deepseek-r1:free',
           messages: [
             {
-              role: "user",
+              role: 'user',
               content: debatePrompt,
             },
           ],
@@ -61,7 +61,7 @@ export const getFunnyFeud = async (req, res, next) => {
 
     const data = await response.json();
     const chatbotReply =
-      data.choices?.[0]?.message?.content || "No response from chatbot";
+      data.choices?.[0]?.message?.content || 'No response from chatbot';
 
     return res.status(200).json({ chatbotReply, prompt });
   } catch (error) {

@@ -1,4 +1,4 @@
-import mongoose from "mongoose"
+import mongoose from 'mongoose';
 
 const userSchema = new mongoose.Schema({
   name: String,
@@ -9,12 +9,12 @@ const userSchema = new mongoose.Schema({
     default: false,
   },
   verificationToken: {
-    type: String, 
+    type: String,
   },
   timeZone: String,
   dailyInsightsTime: {
     type: String,
-    default: "06:00",
+    default: '06:00',
   },
   countries: [String],
   categories: [String],
@@ -22,4 +22,4 @@ const userSchema = new mongoose.Schema({
   dailyInsightsEnabled: Boolean,
 });
 
-export const User = mongoose.model("User", userSchema);
+export const User = mongoose.model('User', userSchema);
