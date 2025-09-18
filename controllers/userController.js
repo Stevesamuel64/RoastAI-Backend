@@ -83,7 +83,7 @@ export const signupUser = async (req, res) => {
     const savedUser = await user.save();
 
     const transporter = nodemailer.createTransport({
-      service: 'Gmail',
+      service: 'gmail',
       auth: {
         user: process.env.EMAIL_USER_verification,
         pass: process.env.EMAIL_PASS_verification,
@@ -92,7 +92,7 @@ export const signupUser = async (req, res) => {
 
     const verificationUrl = `${process.env.FRONTEND_URL}/verify/${verificationToken}`;
     await transporter.sendMail({
-      from: 'yash999.connect@gmail.com',
+      from: `<${process.env.EMAIL_USER}>`,
       to: email,
       subject: 'Verify your email for YourApp',
       html: `<p>Hi ${name},</p><p>Please click the link below to verify your email:</p><a href="${verificationUrl}">Verify My Email</a>`,
