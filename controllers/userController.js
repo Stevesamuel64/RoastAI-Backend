@@ -91,18 +91,18 @@ export const signupUser = async (req, res) => {
     });
 
     const verificationUrl = `${process.env.FRONTEND_URL}/verify/${verificationToken}`;
-    try {
-  await transporter.sendMail({
-    from: `"YourApp Support" <${process.env.EMAIL_USER}>`,
-    to: email,
-    subject: 'Verify your email for YourApp',
-    html: `<p>Hi ${name},</p><p>Please click the link below to verify your email:</p><a href="${verificationUrl}">Verify My Email</a>`,
-  });
-  console.log('Verification email sent to:', email);
-} catch (err) {
-  console.error('Email sending failed:', err);
-}
 
+    try {
+      await transporter.sendMail({
+        from: `"YourApp Support" <${process.env.EMAIL_USER_verification}>`,
+        to: email,
+        subject: 'Verify your email for YourApp',
+        html: `<p>Hi ${name},</p><p>Please click the link below to verify your email:</p><a href="${verificationUrl}">Verify My Email</a>`,
+      });
+      console.log('Verification email sent to:', email);
+    } catch (err) {
+      console.error('Email sending failed:', err);
+    }
 
     res.status(201).json({
       message: 'Please check your email to verify your account.',
