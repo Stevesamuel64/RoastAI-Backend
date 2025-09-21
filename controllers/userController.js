@@ -92,7 +92,7 @@ export const signupUser = async (req, res) => {
 
     const verificationUrl = `${process.env.FRONTEND_URL}/verify/${verificationToken}`;
     await transporter.sendMail({
-      from: `<${process.env.EMAIL_USER}>`,
+      from: `<${process.env.EMAIL_USER_verification}>`,
       to: email,
       subject: 'Verify your email for YourApp',
       html: `<p>Hi ${name},</p><p>Please click the link below to verify your email:</p><a href="${verificationUrl}">Verify My Email</a>`,
