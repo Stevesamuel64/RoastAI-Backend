@@ -97,7 +97,8 @@ export const signupUser = async (req, res) => {
       subject: 'Verify your email for YourApp',
       html: `<p>Hi ${name},</p><p>Please click the link below to verify your email:</p><a href="${verificationUrl}">Verify My Email</a>`,
     });
-
+    
+    
     res.status(201).json({
       message: 'Please check your email to verify your account.',
       user: {
